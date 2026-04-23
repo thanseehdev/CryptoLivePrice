@@ -11,6 +11,7 @@ app.get('/', async (req, res) => {
         const response = await axios.get(
             "https://api.coingecko.com/api/v3/coins/markets",
             {
+                timeout: 10000,
                 params: {
                     vs_currency: "usd",
                     order: "market_cap_desc",
