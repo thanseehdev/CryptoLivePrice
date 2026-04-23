@@ -9,15 +9,15 @@ app.set('view engine', 'ejs')
 app.get('/', async (req, res) => {
     try {
         const response = await axios.get(
-            'https://api.coingecko.com/api/v3/coins/markets',
+            "https://api.coingecko.com/api/v3/coins/markets",
             {
                 params: {
-                    vs_currency: 'usd',
-                    order: 'market_cap_desc',
-                    limit: 10,
-                    lang: 'en',
+                    vs_currency: "usd",
+                    order: "market_cap_desc",
+                    per_page: 10,
+                    page: 1,
                     sparkline: false,
-                    price_change_percentage: '24h'
+                    price_change_percentage: "24h"
                 }
             }
         )
